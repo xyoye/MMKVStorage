@@ -7,17 +7,17 @@
 
 * 自动生成key、defaultValue
 
-## 使用 ##
+## 1.使用 ##
 
 使用前提：集成[MMKV](https://github.com/Tencent/MMKV) ，在Application初始化MMKV
 
-### 1.集成moduler ###
+### 1).集成moduler ###
 	
 	implementation project(':mmkv-annotation')
-    annotationProcessor project(':mmkv-compiler')
+	annotationProcessor project(':mmkv-compiler')
 
 
-### 2.创建属性，添加@MMKVData注解 ###
+### 2).创建属性，添加@MMKVData注解 ###
 建议新建类，用于集中放置数据
 	
 	public class MMKVConfig {
@@ -38,7 +38,7 @@
 	    private static final int mmkvIntV4 = 3;
 	}
 
-### 3.调用 ###
+### 3).调用 ###
 	
 	//get
 	int intData = MMKVStorage.getMmkvInt();
@@ -47,7 +47,7 @@
 	MMKVStorage.putMmkvInt(123);
 
 
-## 说明 ##
+## 2.说明 ##
 例：
 
 	@MMKVData(key = "key_test_int_v4", commit = true)
@@ -74,6 +74,7 @@
 | mmkvIntV4（变量名）| 必须 | 将变量名自动生成get和put的方法名（首字母大写）以及默认的key值（小写+下划线）|
 | 3（变量值）| 非必须 | get方法的defaultValue（默认值）|
 
-## 注意 ##
+## 3.注意 ##
 1.设置默认值时，属性必须添加final
+
 2.byte[]和Set<String\>不支持设置默认值
