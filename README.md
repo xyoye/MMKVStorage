@@ -11,7 +11,7 @@
 
 使用前提：集成[MMKV](https://github.com/Tencent/MMKV) ，在Application初始化MMKV
 
-###1.集成moduler ###
+### 1.集成moduler ###
 	
 	implementation project(':mmkv-annotation')
     annotationProcessor project(':mmkv-compiler')
@@ -75,4 +75,5 @@
 | 3（变量值）| 非必须 | get方法的defaultValue（默认值）|
 
 ## 注意 ##
-1.设置默认值时，属性必须添加final，且byte[]和Set<String\>不支持设置默认值
+1.设置默认值时，属性必须添加final
+2.byte[]和Set<String\>不支持设置默认值
