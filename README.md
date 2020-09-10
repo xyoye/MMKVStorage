@@ -11,7 +11,7 @@
 
 使用前提：集成[MMKV](https://github.com/Tencent/MMKV) ，在Application初始化MMKV
 
-### 1).集成moduler ###
+### 1).集成module ###
 	
 	implementation project(':mmkv-annotation')
 	annotationProcessor project(':mmkv-compiler')
@@ -38,7 +38,7 @@
 	    private static final int mmkvIntV4 = 3;
 	}
 
-### 3).调用 ###
+### 3).Rebuild Project，调用方法 ###
 	
 	//get
 	int intData = MMKVStorage.getMmkvInt();
