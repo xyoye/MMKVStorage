@@ -1,0 +1,4 @@
+include ':mmkv-compiler'
+include ':mmkv-annotation'
+include ':app'
+rootProject.name = "MMKVStorage"
