@@ -1,4 +1,4 @@
-package com.xyoye.mmkv_compiler;
+package com.xyoye.mmkv_compiler.utils;
 
 import com.google.common.base.CaseFormat;
 

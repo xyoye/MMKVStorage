@@ -51,7 +51,7 @@
 例：
 
 	@MMKVData(key = "key_test_int_v4", commit = true)
-	private static final int mmkvIntV4 = 3;
+	public static final int mmkvIntV4 = 3;
 
 自动生成结果：
 	
@@ -68,13 +68,7 @@
 | @MMKVData | 必须 | 定义该变量需要自动生成方法 |
 | key | 非必须 | 不设置时，mmkv的key为key+属性名小写。如：key_mmkv_int_v4 |
 | commit | 非必须 | 不设置时，默认提交方式为apply；设置时，提交方式为commit，且put方法返回值为boolean |
-| private static | 非必须 | 建议使用 |
-| final | 非必须 | 在设置默认值时必须 |
+| public static | 非必须 | 在设置默认值时必须 |
 | int（变量类型）| 必须 | 且只能是为String，int，float，long，boolean，byte[]，Set<String\>中其中一种 |
 | mmkvIntV4（变量名）| 必须 | 将变量名自动生成get和put的方法名（首字母大写）以及默认的key值（小写+下划线）|
 | 3（变量值）| 非必须 | get方法的defaultValue（默认值）|
-
-## 3.注意 ##
-1.设置默认值时，属性必须添加final
-
-2.byte[]和Set<String\>不支持设置默认值

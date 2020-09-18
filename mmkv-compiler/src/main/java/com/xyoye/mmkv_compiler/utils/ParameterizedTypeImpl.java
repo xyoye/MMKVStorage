@@ -1,4 +1,4 @@
-package com.xyoye.mmkv_compiler;
+package com.xyoye.mmkv_compiler.utils;
 
 import java.lang.reflect.MalformedParameterizedTypeException;
 import java.lang.reflect.ParameterizedType;

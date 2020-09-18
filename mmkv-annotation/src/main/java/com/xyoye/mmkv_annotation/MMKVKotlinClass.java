@@ -9,10 +9,10 @@ import java.lang.annotation.Target;
  * Created by xyoye on 2020/9/10.
  */
 
-@Target({ElementType.FIELD})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.CLASS)
-public @interface MMKVData {
-    String key() default "";
+public @interface MMKVKotlinClass {
+    String className() default "";
 
-    boolean commit() default false;
+    boolean initMMKV() default false;
 }
