@@ -13,19 +13,19 @@
 	//你需要编写的代码
 	@MMKVKotlinClass
 	object TestKotlin{
-		@MMKVFiled
-		val kotlinVlaue = 12
+	    @MMKVFiled
+	    val kotlinVlaue = 12
 	}
 
 	//自动生成的代码
 	object TestKotlin_MMKV {
-	  private val mmkv: MMKV = MMKV.defaultMMKV()
+	    private val mmkv: MMKV = MMKV.defaultMMKV()
 	
-	  fun putKotlinValue(value: Int) {
-	    mmkv.putInt("key_kotlin_value", value)
-	  }
+	    fun putKotlinValue(value: Int) {
+	        mmkv.putInt("key_kotlin_value", value)
+	    }
 	
-	  fun getKotlinValue(): Int = mmkv.getInt("key_kotlin_value", com.xyoye.mmkvstorage.TestKotlin.kotlinValue)
+	    fun getKotlinValue(): Int = mmkv.getInt("key_kotlin_value", com.xyoye.mmkvstorage.TestKotlin.kotlinValue)
 	}
 
 
@@ -48,7 +48,7 @@
 	@MMKVKotlinClass
 	object TestKotlin {
 	
-		//2.添加属性注解
+	    //2.添加属性注解
 	    @MMKVFiled
 	    val kotlinValue = 12
 	
@@ -62,7 +62,7 @@
 	@MMKVJavaClass
 	public class TestJava {
 
-		//2.添加属性注解
+	    //2.添加属性注解
 	    @MMKVFiled
 	    protected static int javaValue = 1;
 	
@@ -79,48 +79,48 @@
 
 如：TestKotlin -> TestKotlin_MMKV, TestJava -> TestJava_MMKV
 	
-	#kotlin
-	//get
-	val kotlinInt = TestKotlin_MMKV.getKotlinValue()
+    #kotlin
+    //get
+    val kotlinInt = TestKotlin_MMKV.getKotlinValue()
     //put  
     TestKotlin_MMKV.putKotlinValue(123)
 
-	#java
-	//get
-	int javaInt = TestJava_MMKV.getJavaValue();
+    #java
+    //get
+    int javaInt = TestJava_MMKV.getJavaValue();
     //put   
     TestJava_MMKV.putJavaValue(123);
 
 
 ## 4.扩展，高级使用 ##
 1) 自定义自动生成类的类名
-	
-	//在类注解添加类名
-	@MMKVKotlinClass(className = "MMKVStorageKotlin")
-	@MMKVJavaClass(className = "MMKVStorageJava")
+
+        //在类注解添加类名
+        @MMKVKotlinClass(className = "MMKVStorageKotlin")
+        @MMKVJavaClass(className = "MMKVStorageJava")
 
 2) 自定义mmkv实例化方式
 
-	//在类注解设置initMMKV = true
-	@MMKVKotlinClass(initMMKV = true)
-	@MMKVJavaClass(initMMKV = true)
+        //在类注解设置initMMKV = true
+        @MMKVKotlinClass(initMMKV = true)
+        @MMKVJavaClass(initMMKV = true)
 
-	//在使用前先初始化mmkv
-	#java
-	TestJava_MMKV.initMMKV(MMKV实例)
+        //在使用前先初始化mmkv
+        #java
+        TestJava_MMKV.initMMKV(MMKV实例)
 	
-	#kotlin
-	TestKotlin_MMKV.initMMKV(MMKV实例)
+        #kotlin
+        TestKotlin_MMKV.initMMKV(MMKV实例)
 
 3) 自定义mmkv存储键
 	
-	//在属性注解设置自定义的key
-	@MMKVFiled(key = "key_test_key")
+        //在属性注解设置自定义的key
+        @MMKVFiled(key = "key_test_key")
 
 4) 自定义存储方式（默认apply存储）
 	
-	//在属性注解设置以commit提交
-	@MMKVFiled(commit = true)
+        //在属性注解设置以commit提交
+        @MMKVFiled(commit = true)
 
 ## 5.说明，我写的代码到底用来干什么 ##
 
@@ -128,8 +128,8 @@
 
 	@MMKVKotlinClass
 	object TestKotlin{
-		@MMKVFiled
-		val kotlinVlaue: Int = 12
+	    @MMKVFiled
+	    val kotlinVlaue: Int = 12
 	}
 
 
