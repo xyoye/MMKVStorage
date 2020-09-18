@@ -120,7 +120,7 @@ object MMKVKotlinBuilder {
             funBuilder.addStatement("return mmkv.$mmkvMethodName(\"$key\", value).commit()")
                     .returns(Boolean::class)
         } else {
-            funBuilder.addStatement("mmkv.$mmkvMethodName(\"$key\", value)")
+            funBuilder.addStatement("mmkv.$mmkvMethodName(\"$key\", value).apply()")
         }
 
         return funBuilder.build()
