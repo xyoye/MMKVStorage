@@ -1,6 +1,5 @@
 package com.xyoye.mmkv_compiler.java;
 
-import com.google.auto.service.AutoService;
 import com.xyoye.mmkv_annotation.MMKVJavaClass;
 
 import java.io.IOException;
@@ -10,7 +9,6 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
-import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
@@ -23,7 +21,6 @@ import kotlin.Metadata;
  * Created by xyoye on 2020/9/10.
  */
 
-@AutoService(Processor.class)
 public class MMKVJavaCompiler extends AbstractProcessor {
 
     private Filer filer;

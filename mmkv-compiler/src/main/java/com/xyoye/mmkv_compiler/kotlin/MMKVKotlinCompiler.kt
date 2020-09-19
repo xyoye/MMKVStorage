@@ -1,10 +1,12 @@
 package com.xyoye.mmkv_compiler.kotlin
 
-import com.google.auto.service.AutoService
 import com.squareup.kotlinpoet.asClassName
 import com.xyoye.mmkv_annotation.MMKVKotlinClass
 import com.xyoye.mmkv_compiler.utils.throwException
-import javax.annotation.processing.*
+import javax.annotation.processing.AbstractProcessor
+import javax.annotation.processing.Filer
+import javax.annotation.processing.ProcessingEnvironment
+import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.Modifier
 import javax.lang.model.element.TypeElement
@@ -13,8 +15,7 @@ import javax.lang.model.element.TypeElement
  * Created by xyoye on 2020/9/18.
  */
 
-@AutoService(Processor::class)
-open class MMKVKotlinCompiler() : AbstractProcessor() {
+open class MMKVKotlinCompiler : AbstractProcessor() {
     lateinit var filer: Filer
 
     override fun init(processingEnv: ProcessingEnvironment?) {

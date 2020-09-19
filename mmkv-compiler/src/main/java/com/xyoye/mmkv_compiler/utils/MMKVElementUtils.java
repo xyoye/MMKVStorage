@@ -6,7 +6,6 @@ import com.squareup.javapoet.TypeName;
 import java.lang.reflect.Type;
 import java.util.Set;
 
-import javax.annotation.Nullable;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
 
@@ -44,7 +43,6 @@ public class MMKVElementUtils {
      * <p>
      * 例： final String mmkvData = "123" -> "包名.类名.mmkvData"
      */
-    @Nullable
     public static String getDefaultValueString(Element clazzElement, Element valueElement) {
         //判断字段是否为静态变量
         Set<Modifier> modifiers = valueElement.getModifiers();
