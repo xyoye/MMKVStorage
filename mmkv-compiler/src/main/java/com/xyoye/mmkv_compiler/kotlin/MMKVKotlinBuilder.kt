@@ -132,7 +132,7 @@ object MMKVKotlinBuilder {
      */
     private fun generateGetMethod(element: Element, clazz: KClass<*>, key: String, defaultValue: String): FunSpec {
         //方法名
-        val getMethodName = "get${TextUtils.toUpperCaseInitials(element.toString())}"
+        val getMethodName = "${if (clazz == Boolean::class) "is" else "get"}${TextUtils.toUpperCaseInitials(element.toString())}"
 
         //mmkv方法名
         val mmkvMethodName = "get${MMKVKtElementUtils.getMMKVMethodName(clazz)}"

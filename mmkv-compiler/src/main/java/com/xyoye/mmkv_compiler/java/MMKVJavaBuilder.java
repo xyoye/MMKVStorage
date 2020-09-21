@@ -152,7 +152,8 @@ public class MMKVJavaBuilder {
      */
     private static MethodSpec generateGetMethod(Element element, Class<?> clazz, String key, Object defaultValue) {
         //方法名，例：String mmkvData -> getMmkvData()
-        String getMethodName = "get" + TextUtils.toUpperCaseInitials(element.toString());
+        String methodType = clazz == boolean.class ? "is" : "get";
+        String getMethodName = methodType + TextUtils.toUpperCaseInitials(element.toString());
 
         //方法内容，例：final String mmkvData = "123" -> mmkv.getString("key_mmkv_data", "123");
         String mmkvMethod = "get" + MMKVElementUtils.getMMKVMethodName(clazz);
